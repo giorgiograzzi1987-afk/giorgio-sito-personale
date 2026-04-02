@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Giorgio Grazzi — designer, developer e founder di Giorgio Grazzi Group." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta property="og:title" content="Giorgio Grazzi" />
+  <meta property="og:description" content="Designer, developer, content creator." />
+  <meta property="og:type" content="website" />
+  <title>Giorgio Grazzi</title>
+
+  <!-- Favicon: emoji ragazzo pelle rosa -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👦🏻</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── Nav ────────────────────────────────────────────────────────────────── -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <span>Giorgio</span><span class="dot">.</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#bio"      data-section="bio">Bio</a></li>
+    <li><a href="#progetti" data-section="progetti">Progetti</a></li>
+    <li><a href="#blog"     data-section="blog">Blog</a></li>
+    <li><a href="#contatti" data-section="contatti">Contatti</a></li>
+  </ul>
+
+  <button class="nav-admin-btn" id="admin-toggle" aria-label="Admin">Admin</button>
+</nav>
+
+<!-- ── Admin panel ─────────────────────────────────────────────────────────── -->
+<div id="admin" role="region" aria-label="Pannello Admin">
+  <h2>
+    <span class="dot-accent dot-violet"></span>
+    Admin
+  </h2>
+
+  <!-- Login -->
+  <div id="login-section">
+    <form id="login-form" novalidate>
+      <div class="field">
+        <label for="login-user">Username</label>
+        <input type="text" id="login-user" autocomplete="username" placeholder="giorgio" required />
+      </div>
+      <div class="field">
+        <label for="login-pass">Password</label>
+        <input type="password" id="login-pass" autocomplete="current-password" required />
+      </div>
+      <p class="form-error" id="login-error"></p>
+      <button type="submit" class="btn-submit">Accedi</button>
+    </form>
+  </div>
+
+  <!-- Post form (shown after login) -->
+  <div id="post-section" style="display:none">
+    <form id="post-form" enctype="multipart/form-data" novalidate>
+      <div class="field">
+        <label for="post-title">Titolo *</label>
+        <input type="text" id="post-title" placeholder="Titolo del post" required />
+      </div>
+      <div class="field">
+        <label for="post-body">Testo</label>
+        <textarea id="post-body" rows="4" placeholder="Scrivi qualcosa…"></textarea>
+      </div>
+      <div class="field">
+        <label for="media-input">Immagine o video</label>
+        <input type="file" id="media-input" accept="image/*,video/mp4,video/mov,video/webm" />
+        <div id="media-preview"></div>
+      </div>
+      <p class="form-error"  id="post-error"></p>
+      <p class="form-success" id="post-success"></p>
+      <button type="submit" class="btn-submit" id="post-submit-btn">Pubblica</button>
+    </form>
+  </div>
+</div>
+
+<!-- ── Hero ────────────────────────────────────────────────────────────────── -->
+<section id="hero">
+  <!-- Ambient glows -->
+  <div class="hero-glow-wrap" aria-hidden="true">
+    <div class="glow-teal"   style="top:-100px; left:-100px;"></div>
+    <div class="glow-violet" style="top:200px; right:-80px;"></div>
+    <div class="glow-orange" style="bottom:0; left:30%;"></div>
+  </div>
+
+  <p class="hero-eyebrow">Ciao, sono</p>
+  <h1 class="hero-name">Giorgio<br>Grazzi</h1>
+
+  <p class="hero-tagline">
+    <span id="typing-text"></span><span class="cursor" aria-hidden="true"></span>
+  </p>
+
+  <div class="hero-cta">
+    <a href="#progetti" class="btn-primary">Vedi i progetti</a>
+    <a href="#contatti" class="btn-ghost">Scrivimi</a>
+  </div>
+
+  <div class="hero-dots" aria-hidden="true">
+    <span class="dot-accent dot-teal"></span>
+    <span class="dot-accent dot-violet"></span>
+    <span class="dot-accent dot-orange"></span>
+  </div>
+</section>
+
+<!-- ── Bio ─────────────────────────────────────────────────────────────────── -->
+<section id="bio">
+  <div class="section-label fade-up">
+    <span class="dot-accent dot-teal"></span>
+    Chi sono
+  </div>
+
+  <p class="bio-text fade-up">
+    Sono <strong>Giorgio Grazzi</strong>, founder di <strong>Giorgio Grazzi Group</strong> —
+    studio creativo specializzato in design, social media management e sviluppo web.
+    Aiuto brand e persone a costruire la loro presenza digitale con identità visive
+    curate e siti che funzionano davvero.
+  </p>
+
+  <div class="bio-chips fade-up">
+    <span class="chip teal">UI / UX Design</span>
+    <span class="chip violet">Web Development</span>
+    <span class="chip orange">Social Media</span>
+    <span class="chip">Branding</span>
+    <span class="chip">Content Creation</span>
+    <span class="chip">Flask · Python</span>
+    <span class="chip">HTML · CSS · JS</span>
+  </div>
+</section>
+
+<!-- ── Progetti ─────────────────────────────────────────────────────────────── -->
+<section id="progetti">
+  <div class="section-label fade-up">
+    <span class="dot-accent dot-violet"></span>
+    Progetti
+  </div>
+
+  <div class="projects-grid">
+
+    <article class="project-card teal fade-up">
+      <div class="accent-line"></div>
+      <h3>Giorgio Grazzi Group</h3>
+      <p>Sito ufficiale dello studio con carrello, pacchetti e modulo contatti.</p>
+      <div class="project-tags">
+        <span>HTML</span><span>CSS</span><span>JS</span><span>Flask</span>
+      </div>
+    </article>
+
+    <article class="project-card violet fade-up">
+      <div class="accent-line"></div>
+      <h3>Sito Personale</h3>
+      <p>Questo sito — dark, minimal, con blog e pannello admin integrato.</p>
+      <div class="project-tags">
+        <span>HTML</span><span>CSS</span><span>JS</span><span>Python</span>
+      </div>
+    </article>
+
+    <article class="project-card orange fade-up">
+      <div class="accent-line"></div>
+      <h3>Social Media Management</h3>
+      <p>Gestione completa dei canali social per brand locali e digitali.</p>
+      <div class="project-tags">
+        <span>Instagram</span><span>TikTok</span><span>Canva</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ── Blog ────────────────────────────────────────────────────────────────── -->
+<section id="blog">
+  <div class="section-label fade-up">
+    <span class="dot-accent dot-orange"></span>
+    Blog
+  </div>
+
+  <div id="posts-list" class="posts-list" aria-live="polite">
+    <!-- Posts loaded dynamically by JS -->
+    <div class="posts-empty">Caricamento…</div>
+  </div>
+</section>
+
+<!-- ── Contatti ─────────────────────────────────────────────────────────────── -->
+<section id="contatti">
+  <div class="section-label fade-up">
+    <span class="dot-accent dot-teal"></span>
+    Contatti
+  </div>
+
+  <div class="contact-grid fade-up">
+
+    <a href="https://instagram.com/giorgiograzzigroup" target="_blank" rel="noopener" class="contact-card">
+      <!-- Instagram icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+      </svg>
+      @giorgiograzzigroup
+    </a>
+
+    <a href="mailto:giorgiograzzi1987@gmail.com" class="contact-card">
+      <!-- Email icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="M2 7l10 7 10-7"/>
+      </svg>
+      giorgiograzzi1987@gmail.com
+    </a>
+
+  </div>
+</section>
+
+<!-- ── Footer ──────────────────────────────────────────────────────────────── -->
+<footer>
+  <p>© 2025 Giorgio Grazzi</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
